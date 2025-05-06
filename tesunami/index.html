@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tsunami Tides</title>
+    <link rel="stylesheet" href="/style.css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+ 
+</head>
+<body>
+
+    <!-- Cover Page -->
+    <div class="cover" id="cover">
+        <video autoplay muted loop id="background-video">
+            <source src="/gif/6815626-uhd_4096_1974_30fps.mp4" type="video/mp4">
+           
+        </video>
+        <div class="cover-text">
+            <h1>Tsunami Tides</h1>
+            <p>Understanding the Tsunami Threat</p>
+            <button id="next-button">Next</button>
+        </div>
+    </div>
+    
+    
+
+    <section id="simulation" class="section">
+        <h2>How Tsunamis Happen</h2>
+        <p>
+            Tsunamis are large ocean waves caused by sudden disturbances in or near the ocean, such as underwater earthquakes, volcanic eruptions, or landslides.
+            When these disturbances displace a massive amount of water, the energy from this event causes waves to radiate outward, traveling at incredible speeds across the ocean.
+            Upon reaching the shore, the waves slow down but can grow in height, causing massive destruction.
+        </p>
+        <p>
+            <strong>Key Factors for Tsunami Formation:</strong>
+            <ul>
+                <li><a href="#">Underwater Earthquakes</a> – Earthquakes occurring beneath the ocean floor can displace water, creating waves.</li>
+                <li><a href="#">Volcanic Eruptions</a> – Eruptions that cause underwater explosions or collapse of volcanic islands.</li>
+                <li><a href="#">Landslides</a> – Large underwater landslides can also lead to displacement of water, causing waves.</li>
+            </ul>
+        </p>
+        <button class="next-section">Next</button>
+    
+        <div class="simulation-container">
+            <canvas id="waveCanvas" width="800" height="400"></canvas>
+        </div>
+    </section>
+    
+    
+    
+    
+    <section id="history" class="section">
+        <h2>Worst Tsunami History</h2>
+        <p>Explore some of the most devastating tsunamis ever recorded and their impact on the affected regions:</p>
+        <ul>
+            <li><a href="#">2004 Indian Ocean Tsunami</a> – Over 230,000 people were killed in 14 countries when an earthquake triggered massive waves in the Indian Ocean.</li>
+            <li><a href="#">2011 Japan Tsunami</a> – Following a magnitude 9.1 earthquake, this tsunami caused widespread damage, particularly in Japan, with more than 15,000 fatalities.</li>
+            <li><a href="#">1755 Lisbon Tsunami</a> – An earthquake off the coast of Portugal led to one of the deadliest tsunamis, with a death toll of over 60,000 people.</li>
+        </ul>
+        <p>This data is represented visually in the bar chart above, which provides a clear comparison of the death tolls from these major tsunamis.</p>
+        <div class="chart-container">
+            <canvas id="myChart"></canvas>
+        </div>
+        
+        <button class="next-section">Next</button>
+    </section>
+    
+    <section id="death-population" class="section">
+        <h2>Death Population from Tsunamis</h2>
+    <p>Here’s a breakdown of the death toll from some of the worst tsunamis in history:</p>
+    <ul>
+        <li><a href="#">2004 Indian Ocean Tsunami</a> – 230,000+ deaths across 14 countries.</li>
+        <li><a href="#">2011 Japan Tsunami</a> – 15,000+ people lost their lives due to the waves.</li>
+        <li><a href="#">1755 Lisbon Tsunami</a> – 60,000+ fatalities caused by the destruction of coastal areas.</li>
+    </ul>
+    <p>The doughnut chart below visually represents these death tolls, showing the devastating effects tsunamis have had over time.</p>
+        
+        <div class="chart-container">
+            <canvas id="doughnut"></canvas>
+        </div>
+        
+        <button class="next-section">Next</button>
+    </section>
+    
+    <section id="high-risk" class="section">
+        <h2>High-Risk Areas</h2>
+        <p>Some regions around the world are particularly vulnerable to tsunamis. These areas are often located near tectonic plate boundaries, where underwater earthquakes or volcanic eruptions can trigger massive waves.</p>
+    
+        <h3>Most Vulnerable Regions</h3>
+        <ul>
+            <li><strong>Japan:</strong> Located along the Pacific Ring of Fire, Japan faces a significant tsunami risk due to frequent seismic activity.</li>
+            <li><strong>Indonesia:</strong> Tsunamis are a major risk for Indonesia, especially along its western coast.</li>
+            <li><strong>Chile:</strong> The coastal areas of Chile are also prone to tsunami risks due to tectonic activity along the Nazca Plate.</li>
+        </ul>
+    
+        <h3>Tsunami Warning Systems</h3>
+        <p>Many high-risk regions have developed tsunami warning systems to protect their populations. These systems monitor seismic activity and ocean levels to issue early alerts. Understanding how these systems work can save lives in the event of a tsunami.</p>
+    
+        <h3>Safety Measures</h3>
+        <ul>
+            <li>Secure heavy furniture to walls to prevent injury during a tsunami.</li>
+            <li>Elevate buildings in coastal areas to reduce flooding risks.</li>
+            <li>Ensure all family members know tsunami evacuation routes.</li>
+        </ul>
+    
+        <h3>Learn More</h3>
+        <p><a href="https://en.wikipedia.org/wiki/Tsunami#:~:text=A%20tsunami%20can%20occur%20in,high%20(46%20ft)%20surge.">Learn more about high-risk tsunami areas</a></p>
+        <button class="next-section">Next</button>
+    </section>
+    
+    <section id="preparedness" class="section">
+        <h1>Preparedness</h1>
+        
+        <!-- Navbar -->
+        <div class="navbar">
+            <a href="#" id="home-link" class="nav-link active">Home Preparedness</a>
+            <a href="#" id="community-link" class="nav-link">Community Preparedness</a>
+            <a href="#" id="education-link" class="nav-link">Education Preparedness</a>
+        </div>
+        
+        
+        <!-- Content Divs for each section -->
+        <div id="home-content" class="content-section">
+            <ul>
+                <li>Secure heavy furniture to walls.</li>
+                <li>Prepare an emergency kit with food, water, and medical supplies.</li>
+                <li>Know your evacuation routes.</li>
+            </ul>
+        </div>
+        
+        <div id="community-content" class="content-section" style="display: none;">
+            <ul>
+                <li>Establish community alert systems.</li>
+                <li>Conduct regular evacuation drills and emergency response training.</li>
+                <li>Build community shelters in safe zones.</li>
+            </ul>
+        </div>
+        
+        <div id="education-content" class="content-section" style="display: none;">
+            <ul>
+                <li>Educate the public about tsunami signs and immediate actions.</li>
+                <li>Include disaster preparedness in school curricula.</li>
+                <li>Distribute informational materials.</li>
+            </ul>
+        </div>
+     
+        <button class="next-section">Next</button>
+        
+    </section>
+    
+    <section id="quiz" class="section">
+        <h2>Quiz</h2>
+        <p>Test your knowledge about tsunamis!</p>
+    
+        <div id="question-container">
+            <div class="question" id="question1">
+                <p>Question 1: Is tsunami caused by undersea earthquakes?</p>
+                <button class="answer correct" data-next="question2">True</button>
+                <button class="answer" data-next="question2">False</button>
+            </div>
+            <div class="question" id="question2">
+                <p>Question 2: Do tsunamis occur only in the Pacific Ocean?</p>
+                <button class="answer" data-next="question3">True</button>
+                <button class="answer correct" data-next="question3">False</button>
+            </div>
+            <div class="question" id="question3">
+                <p>Question 3: Can tsunamis be predicted accurately?</p>
+                <button class="answer" data-next="question4">True</button>
+                <button class="answer correct" data-next="question4">False</button>
+            </div>
+            <div class="question" id="question4">
+                <p>Question 4: Do all tsunamis cause significant damage?</p>
+                <button class="answer" data-next="question5">True</button>
+                <button class="answer correct" data-next="question5">False</button>
+            </div>
+            <div class="question" id="question5">
+                <p>Question 5: Is the Indian Ocean prone to tsunamis?</p>
+                <button class="answer correct" data-next="question6">True</button>
+                <button class="answer" data-next="question6">False</button>
+            </div>
+            <div class="question" id="question6">
+                <p>Question 6: Are tsunamis caused by volcanic eruptions?</p>
+                <button class="answer" data-next="question7">True</button>
+                <button class="answer correct" data-next="question7">False</button>
+            </div>
+            <div class="question" id="question7">
+                <p>Question 7: Can humans trigger tsunamis?</p>
+                <button class="answer" data-next="question8">True</button>
+                <button class="answer correct" data-next="question8">False</button>
+            </div>
+            <div class="question" id="question8">
+                <p>Question 8: Can a tsunami reach as far as a few hundred miles inland?</p>
+                <button class="answer" data-next="finished">True</button>
+                <button class="answer correct" data-next="finished">False</button>
+            </div>
+        </div>
+    
+        <div id="quiz-status"></div>
+        <div id="score-display"></div>
+        <button class="next-section">Next</button>
+        <!-- New Button to Reveal Answers -->
+    <button id="see-answers-btn">See Answers</button>
+    
+    <!-- Hidden Answer Elements -->
+    <div id="answers-section" style="display:none;">
+        <h3>Correct Answers:</h3>
+        <p><strong>Q1:</strong> True</p>
+        <p><strong>Q2:</strong> False</p>
+        <p><strong>Q3:</strong> False</p>
+        <p><strong>Q4:</strong> False</p>
+        <p><strong>Q5:</strong> True</p>
+        <p><strong>Q6:</strong> True</p>
+        <p><strong>Q7:</strong> False</p>
+        <p><strong>Q8:</strong> False</p>
+    </div>
+    </section>
+
+
+    <!-- Dot Navigation -->
+    <div class="dot-navigation">
+        <!-- <div class="dot" data-section="info"></div> -->
+        <div class="dot" data-section="simulation"></div>
+        <div class="dot" data-section="history"></div>
+        <div class="dot" data-section="death-population"></div>
+        <div class="dot" data-section="high-risk"></div>
+        <div class="dot" data-section="preparedness"></div>
+        <div class="dot" data-section="quiz"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="main/chart1.js"></script>
+    <script src="main/chart2.js"></script>
+    <script src="main/main.js"></script>
+    <!-- <script src="/main/animation.js"></script> -->
+</body>
+</html>

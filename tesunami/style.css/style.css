@@ -1,0 +1,860 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    overflow: hidden; /* Hide scrollbars */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: white;
+    background-color: black;
+}
+
+/* Cover Styling */
+.cover {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.cover-text {
+    text-align: center;
+    z-index: 1;
+}
+
+#next-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #00BFFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#next-button:hover {
+    background-color: #008CBA;
+}
+
+#circles-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+    animation: float 20s infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+}
+
+/* Section Styling */
+.section {
+    display: none; /* Hidden by default */
+    padding: 40px;
+    text-align: center;
+    color: white;
+    background-color: black; /* Black background for every section */
+    height: 100vh;
+    overflow: hidden;
+}
+
+.section p {
+    margin-bottom: 40px;
+}
+
+/* Dot Navigation */
+.dot-navigation {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 2;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #00BFFF;
+}
+
+.next-section {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #00BFFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.next-section:hover {
+    background-color: #008CBA;
+}
+
+/* Wave Animation Container */
+.wave-container {
+    width: 80%;
+    height: 300px;
+    margin: 20px auto;
+    border: 2px solid white;
+    overflow: hidden;
+    background-color: black;
+    position: relative;
+}
+
+#waveCanvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Styling for the Worst History Section */
+#history {
+    position: relative;
+    text-align: center;
+    padding: 50px 0;
+    background-color: black; /* Background for the section */
+    color: white;
+}
+
+#history h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+#history p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+button.next-section {
+    background-color: #ff5733;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1.2em;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button.next-section:hover {
+    background-color: blue
+}
+
+/* Center the content */
+.section {
+    text-align: center;
+}
+
+/* Set chart container to prevent scroll bars and fit content */
+.chart-container {
+    width: 70%;       /* Adjusts width as needed for medium sizing */
+    max-width: 600px; /* Ensures chart doesn't get too wide */
+    height: 300px;    /* Medium height to avoid scrollbar */
+    margin: 20px auto; /* Centers the chart */
+}
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+    background-color: #333; /* Slightly lighter background for navbar */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white; /* Set link color to white */
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 2px solid white; /* White border */
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-link.active {
+    background-color: #00BFFF; /* Active link will be blue */
+    color: white; /* Keep text white */
+}
+
+.nav-link:hover {
+    background-color: #444; /* Slight background change on hover */
+}
+
+/* Section Content */
+.content-section {
+    margin: 20px;
+    padding: 20px;
+    background-color: #222; /* Dark background for the content */
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+ul {
+   list-style: none;
+}
+
+li {
+    margin: 10px 0;
+    font-size: 16px;
+    
+}
+
+li::before {
+    content: '• '; /* Custom bullet points */
+    color: #00BFFF; /* Bullet points will be blue */
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+/* General Styles */
+section {
+    margin-bottom: 40px; /* Adds space between sections */
+}
+
+/* Style for h2 */
+h2 {
+    color: #0077be; /* Blue color */
+    margin-bottom: 15px; /* Adds space below h2 */
+}
+
+/* Style for p (paragraphs) */
+/* Style for p (paragraphs) */
+p {
+    color: wheat; /* Sets the text color to wheat */
+    font-size: 18px; /* Sets the text size to a larger value */
+    margin-top: 0; /* Removes the default top margin */
+    margin-bottom: 20px; /* Adds space below paragraphs */
+}
+
+
+/* Style for ul (optional, if you have lists) */
+ul {
+    margin-top: 0; /* Removes the default top margin */
+    padding-left: 20px; /* Adds space for list items */
+}
+
+ul li {
+    margin-bottom: 10px; /* Adds space between list items */
+}
+
+
+/* quiz */
+
+
+/* Style for the quiz section */
+#quiz {
+    background-color: black;
+    color: white;
+    padding: 20px;
+}
+
+#quiz h2 {
+    color: #1e90ff; /* Blue color for headings */
+}
+
+#quiz p {
+    color: wheat; /* Wheat color for paragraph text */
+    font-size: 18px;
+}
+
+/* Style for each question */
+.question {
+    display: none; /* Hide all questions initially */
+    margin-bottom: 20px;
+}
+
+.question button {
+    background-color: #0077be;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.question button:hover {
+    background-color: #005f87;
+}
+
+#quiz-status {
+    margin-top: 20px;
+    color:light blue;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#score-display {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-size: 24px;
+    display: none;
+    border-radius: 10px;
+}
+
+
+#high-risk {
+    background-color: #000;
+    color: white;
+    padding: 20px;
+}
+
+#high-risk h2, #high-risk h3 {
+    color: #0077be;  /* Tsunami blue */
+}
+
+#high-risk ul {
+    list-style: none;
+    margin-left: 20px;
+}
+
+#high-risk a {
+    color: #0077be;
+    text-decoration: none;
+}
+
+#high-risk a:hover {
+    text-decoration: underline;
+}
+
+/* General Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* Dark background for the body */
+    color: #ADD8E6; /* Light blue color for text */
+    margin: 0;
+    padding: 0;
+}
+
+/* Cover Page Styles */
+.cover {
+    position: relative;
+    height: 100vh;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.cover-text h1 {
+    color: #1E3A8A; /* Dark blue for h1 */
+    font-size: 3em;
+    margin-bottom: 0.5em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.cover-text p {
+    color: #ADD8E6; /* Light blue for paragraph */
+    font-size: 1.2em;
+    margin-bottom: 1em;
+}
+
+.cover-text button {
+    background-color: #1E3A8A; /* Dark blue for button background */
+    color: #ADD8E6; /* Light blue for button text */
+    font-size: 1.1em;
+    padding: 0.6em 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cover-text button:hover {
+    background-color: #3B82F6; /* Lighter blue on hover */
+}
+
+/* Section Styles */
+section {
+    padding: 50px;
+    margin-top: 20px;
+}
+
+/* Headings Styles */
+h2, h1 {
+    color: #1E3A8A; /* Dark blue for all headings */
+}
+
+/* Paragraph and Text Styles */
+p {
+    color: #ADD8E6; /* Light blue for all text */
+    font-size: 1.1em;
+}
+
+ul {
+    color: #ADD8E6; /* Light blue for unordered list items */
+}
+
+a {
+    color: #ADD8E6; /* Light blue for links */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Buttons within Sections */
+button.next-section {
+    background-color: #1E3A8A; /* Dark blue for next-section buttons */
+    color: #ADD8E6; /* Light blue text */
+    padding: 0.6em 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+button.next-section:hover {
+    background-color: #3B82F6; /* Lighter blue on hover */
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.nav-link {
+    color: #ADD8E6; /* Light blue text for navbar links */
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #1E3A8A; /* Dark blue color on hover */
+}
+
+/* Active Link */
+.nav-link.active {
+    color: #1E3A8A; /* Dark blue for active link */
+}
+
+/* Dot Navigation */
+.dot-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.dot {
+    width: 15px;
+    height: 15px;
+    background-color: #ADD8E6; /* Light blue for dots */
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot:hover {
+    background-color: #1E3A8A; /* Dark blue for hover effect */
+}
+
+/* Quiz Container */
+#question-container {
+    margin-top: 20px;
+}
+
+/* Question Styles */
+.question {
+    margin-bottom: 20px;
+}
+
+.answer {
+    background-color: #1E3A8A; /* Dark blue for answer buttons */
+    color: #ADD8E6; /* Light blue text */
+    border: none;
+    padding: 10px;
+    margin: 5px 0;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.answer:hover {
+    background-color: #3B82F6; /* Lighter blue on hover */
+}
+
+/* Quiz Result Styles */
+#quiz-status, #score-display {
+    margin-top: 20px;
+    color: #ADD8E6; /* Light blue text for quiz results */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .cover-text h1 {
+        font-size: 2.5em;
+    }
+
+    .cover-text p {
+        font-size: 1em;
+    }
+    
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .nav-link {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+    }
+
+    .dot-navigation {
+        flex-direction: column;
+    }
+
+    .dot {
+        width: 12px;
+        height: 12px;
+    }
+}
+/* Quiz Heading */
+#quiz h2 {
+    color: #ADD8E6; /* Light blue color for the quiz heading */
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Quiz Question Text Only */
+.question p {
+    color: #ADD8E6; /* Light blue color for the question text */
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+/* Answer Button Styles */
+.answer {
+    background-color: #1E3A8A; /* Dark blue for answer buttons */
+    color: #ADD8E6; /* Light blue text */
+    border: none;
+    padding: 10px;
+    margin: 5px 0;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.answer:hover {
+    background-color: #3B82F6; /* Lighter blue on hover */
+}
+/* Quiz Heading */
+#quiz h2 {
+    color: #1E3A8A; /* Dark blue color for the quiz heading */
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Quiz Paragraph */
+#quiz p {
+    color: #ADD8E6; /* Light blue color for paragraph text */
+    font-size: 1.2em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Quiz Question Text */
+.question p {
+    color: #ADD8E6; /* Light blue color for the question text */
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+/* Answer Button Styles */
+.answer {
+    background-color: #1E3A8A; /* Dark blue for answer buttons */
+    color: #ADD8E6; /* Light blue text */
+    border: none;
+    padding: 10px;
+    margin: 5px 0;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.answer:hover {
+    background-color: #3B82F6; /* Lighter blue on hover */
+}
+.cover-text h1 {
+    color: #1E3A8A; /* Dark blue for the heading */
+    font-size: 4em; /* Larger font size for the heading */
+    font-weight: bold; /* Make the heading bold */
+    text-align: center; /* Center the heading */
+    margin: 0;
+    padding: 20px 0;
+}
+/* Styling the entire section */
+#simulation {
+    position: relative;
+    padding-top: 26px; /* Added space at the top for the heading and content */
+    padding-bottom: 54px; /* Added space for the button below the animation */
+}
+
+/* Next Button Styling */
+.next-section {
+    background-color: #1E40AF; /* Dark blue background */
+    color: #E0F2F1; /* Light blue text */
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    margin-top: 17px; /* Push the button below the animation */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+/* Hover effect */
+.next-section:hover {
+    background-color: #3B82F6; /* Lighter blue when hovered */
+}
+
+/* Simulation container to push the canvas down */
+.simulation-container {
+    margin-top: 20px; /* Create space above the animation */
+}
+
+/* Ensure the heading and paragraphs are styled with the desired colors */
+#simulation h2 {
+    color: #1E40AF; /* Dark blue for headings */
+}
+
+#simulation p {
+    color: #E0F2F1; /* Light blue for text */
+}
+
+
+
+/* Define the animation for sliding text up */
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px); /* Start from 30px below */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* End at the normal position */
+    }
+}
+
+/* Apply the animation to text elements */
+.section h2,
+.section p,
+.section ul {
+    opacity: 0; /* Start with text hidden */
+    transform: translateY(30px); /* Initially positioned below */
+    animation: slideUp 1s ease-out forwards; /* Apply slide-up animation */
+}
+
+.section h2,
+.section p {
+    animation-delay: 0.5s; /* Slight delay for better sequencing */
+}
+
+.section ul {
+    animation-delay: 1s; /* Further delay for list items */
+}
+
+/* Styling for the simulation container */
+.simulation-container {
+    position: relative;
+    margin-top: 20px;
+}
+
+.simulation-container canvas {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Next button styling */
+.next-section {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.next-section:hover {
+    background-color: #2980b9;
+}
+
+
+.cover {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full screen height */
+    overflow: hidden; /* Hide any overflow outside the container */
+}
+
+#background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the screen without stretching */
+    z-index: -1; /* Place the video behind other content */
+}
+
+.cover-text {
+    position: relative;
+    text-align: center;
+    color: white;
+    z-index: 1; /* Ensure text is above the video */
+}
+
+h1 #cover {
+    font-size: 2rem;
+    font-family: 'Arial', sans-serif;
+}
+
+p #cover {
+    font-size: 3rem;
+}
+
+#next-button #quiz {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: lightblue;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+p  {
+    font-size: 1.5rem;
+}
+h1{
+    font-size: 2rem;
+}
+h2{
+    font-size: 2.5rem;
+}
+
+
+#see-answers-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color:#00BFFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#see-answers-btn:hover {
+    background-color:#008CBA;
+}
+
+#answers-section {
+    margin-top: 20px;
+    padding: 10px;
+    background-color:black;
+    border-radius: 5px;
+}
+
+#answers-section p {
+    margin: 5px 0;
+}
+
+#history {
+    position: relative;
+    text-align: center;
+    padding: 20px 0; /* Reduce padding */
+    background-color: black; 
+    color: white;
+    height: 100vh; /* Ensure it fits in the screen */
+    overflow-y: auto; /* Allows scrolling inside the section */
+}
+
+.chart-container {
+    width: 70%;
+    max-width: 500px; /* Reduce width */
+    height: 250px; /* Reduce height */
+    margin: 10px auto; /* Less margin */
+}
+
+.section {
+    height: 100vh; /* Ensure it does not exceed screen height */
+    overflow-y: auto; /* Enable scrolling */
+    padding: 20px; /* Reduce padding */
+}
+
+/* Adjust ul list spacing */
+#history ul {
+    padding: 0;
+    margin: 0 auto;
+    max-width: 90%; /* Prevent overflow */
+}
+
+#history p {
+    font-size: 1em; /* Reduce text size slightly */
+    margin-bottom: 15px;
+}
